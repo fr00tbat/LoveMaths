@@ -47,8 +47,10 @@ function checkAnswer() {
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect) {
+        incrementScore();
         alert("Hey! You got it right! :D");
     } else {
+        incrementWrongAnswer();
         alert(`Aw.. you answered ${userAnswer}. The correct answer was ${calculatedAnswer[0]}!`);
     }
 
@@ -75,12 +77,60 @@ function calculateCorrectAnswer() {
 
 }
 
+
+/**
+ * Gets current score from DOM and increments by 1
+ */
 function incrementScore() {
+    
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
+
+
+    // own attempt at function:
+    // let score = 0;
+    // let dispscore = parseInt(document.getElementById("score").innerText);
+    // if (dispscore != 0 ) {
+    //     score = dispscore;
+    // }
+    // console.log("Type of var score is: " + typeof score);
+    // if (score == undefined){
+    //     score = 0;
+    // } else {
+    //     ++score;
+    // }
+    // let toscore = document.getElementById('score');
+    // toscore.innerText = score;
+    // console.log("score is: " + score);
 
 }
 
+/**
+ * Gets current count of incorrect answers from DOM and inrements by 1
+ */
 function incrementWrongAnswer() {
+    
+    let oldIncorrect= parseInt(document.getElementById("incorrect").innerText);
+    document.getElementById("incorrect").innerText = ++oldIncorrect;
 
+
+    // own attempt at function:
+    // let incorrect = 0;
+    // let dispincorrect = parseInt(document.getElementById("incorrect").innerText);
+    // if (dispincorrect != 0 ) {
+    //     incorrect = dispincorrect;
+    // }
+
+    // console.log("Type of var incorrect is: " + typeof incorrect);
+    // if (incorrect == undefined){
+    //     incorrect = 0;
+    
+    // } else {
+    //     ++incorrect;
+    // }
+    // let toincorrect = document.getElementById('incorrect');
+    // toincorrect.innerText = incorrect;
+    // console.log("incorrect is: " + incorrect);
 }
 
 function displayAdditionQuestion(operand1, operand2) {
