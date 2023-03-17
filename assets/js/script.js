@@ -28,7 +28,18 @@ document.addEventListener("DOMContentLoaded", function() {
     /** testing */
     // console.log(play);
     // console.log("hello can you read me");
-    // runGame("addition");
+
+
+    /** not working yet:
+     * examples deprecated, testing
+     */
+    // document.getElementById("answer-box").addEventListener("keydown", Function(Event)) {
+    //     if (Event.key === "Enter") {
+    //         checkAnswer();
+    //     }
+    // }
+
+    runGame("addition");
 
 })
 
@@ -40,7 +51,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function runGame(gameType) {
 
-    document.getElementById("answer-box").value = "";
+    document.getElementById("answer-box").value = ""; //reset answer box to empty string
+    document.getElementById("answer-box").focus();  //set focus/cursor presence to anwer box by default
 
     //creating 2 random numbers between 1 and 25
     let num1 = Math.floor(Math.random()*25) + 1;
